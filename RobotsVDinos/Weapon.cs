@@ -8,13 +8,23 @@ namespace RobotsVDinos
 {
     internal class Weapon
     {
-        string type;
-        int attackPower;
+        private string type;
+        private int attackPower;
 
         public Weapon(string type, int attackPower)
         {
             this.type = type;
             this.attackPower = attackPower;
+        }
+
+        public string getType()
+        {
+            return this.type;
+        }
+
+        public int getAttackPower()
+        {
+            return this.attackPower;
         }
     }
 }

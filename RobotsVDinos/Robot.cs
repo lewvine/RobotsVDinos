@@ -8,18 +8,48 @@ namespace RobotsVDinos
 {
     internal class Robot
     {
-        string name;
-        int health;
-        int powerLevel;
-        Weapon weapon;
-        int attackPower;
+        private string name;
+        private int health;
+        private int powerLevel;
+        private Weapon weapon;
+        private int attackPower;
 
         public Robot(string name, int health, Weapon weapon, int attackPower)
         {
             this.name = name;
             this.health = health;
             this.weapon = weapon;
-            this.attackPower = attackPower;
+            this.attackPower = weapon.getAttackPower();
+        }
+
+        public string getName()
+        {
+            return this.name;
+        }
+
+        public int getHealth()
+        {
+            return this.health;
+        }
+
+        public void setHealth(int value)
+        {
+            this.health -= value;
+        }
+
+        public string getWeaponType()
+        {
+            return this.weapon.getType();
+        }
+
+        public int getAttackPower()
+        {
+            return this.attackPower;
+        }
+
+        public int getPowerLevel()
+        {
+            return this.powerLevel;
         }
     }
 }

@@ -1,10 +1,13 @@
-﻿namespace RobotsVDinos
+﻿using System.Runtime.CompilerServices;
+
+namespace RobotsVDinos
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Battlefield battlefield = new Battlefield();
+            battlefield.Battle();
         }
     }
 }
