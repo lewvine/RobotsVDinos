@@ -13,9 +13,9 @@ namespace RobotsVDinos
         public Herd()
         {
             //Create dinos
-            Dino trex = new Dino("trex", 100, 5, 25);
-            Dino stego = new Dino("stego", 100, 15, 10);
-            Dino terra = new Dino("terra", 100, 10, 15);
+            Dino trex = new Dino("trex", 100, 5, 5);
+            Dino stego = new Dino("stego", 100, 15, 2);
+            Dino terra = new Dino("terra", 100, 10, 3);
 
             //Create dino list
             this.dinos = new List<Dino>();

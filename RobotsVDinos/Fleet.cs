@@ -13,9 +13,9 @@ namespace RobotsVDinos
         public Fleet()
         {
             //Create weapons;
-            Weapon mindray = new Weapon("mindray", 10);
-            Weapon laser = new Weapon("laser", 50);
-            Weapon gun = new Weapon("gun", 25);
+            Weapon mindray = new Weapon("mindray", 5);
+            Weapon laser = new Weapon("laser", 3);
+            Weapon gun = new Weapon("gun", 2);
 
             //Create robots
             Robot c3p0 = new Robot("c3p0", 100, mindray, 10);

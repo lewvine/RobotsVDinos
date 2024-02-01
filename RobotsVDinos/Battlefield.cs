@@ -22,20 +22,22 @@ namespace RobotsVDinos
             while(dino.getHealth() > 0 && robot.getHealth() > 0)
             {
                 Console.Clear();
-                Console.WriteLine($"Round {round}: {dino.getType()} versus {robot.getName()}");
+                Console.WriteLine($"Round {round}: {dino.getType()} ({dino.getHealth()}% Health) versus {robot.getName()} ({robot.getHealth()}% Health)");
                 Random rand = new Random();
 
                 // Dino attack
                 int dinoAttack = dino.getAttackPower() * rand.Next(0, 10);
-                Console.WriteLine($"{dino.getType()} attacks with an attack value of {dinoAttack}.");
-                dino.setHealth(dinoAttack);
-                Console.WriteLine($"{robot.getName()} loses {dinoAttack} health.  {robot.getName()} health at {dino.getHealth()}");
+                Console.WriteLine($"{dino.getType()} attacks {robot.getName()} with an attack value of {dinoAttack}.");
+                robot.setHealth(dinoAttack);
+                Console.WriteLine();
+                Console.ReadLine();
+
 
                 //Robot attack
                 int robotAttack = robot.getAttackPower() * rand.Next(0, 10);
-                Console.WriteLine($"{robot.getName()} attacks with an attack value of {robotAttack}.");
+                Console.WriteLine($"{robot.getName()} attacks {dino.getType()} with an attack value of {robotAttack}.");
                 dino.setHealth(robotAttack);
-                Console.WriteLine($"{dino.getType()} loses {robotAttack} health.  {dino.getType()} health at {dino.getHealth()}");
+                Console.WriteLine();
                 Console.ReadLine();
             }
 
@@ -62,13 +64,13 @@ namespace RobotsVDinos
                 if(loser == -1)
                 {
                     //Robot wins dino loses
-                    Console.WriteLine($"Congratulations, {fleet.robots[0]} wins!");
+                    Console.WriteLine($"Congratulations, {fleet.robots[0].getName()} wins!");
                     herd.dinos.Remove(herd.dinos[0]);
                 }
                 else
                 {
                     //Robot loses dino wins
-                    Console.WriteLine($"Congratulations, {herd.dinos[0]} wins!");
+                    Console.WriteLine($"Congratulations, {herd.dinos[0].getType()} wins!");
                     fleet.robots.Remove(fleet.robots[0]);
                 }
             }
